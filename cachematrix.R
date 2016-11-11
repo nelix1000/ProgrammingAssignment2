@@ -31,3 +31,22 @@ cacheSolve <- function(x, ...) {
         inverse
 }
         ## Return a matrix that is the inverse of 'x'
+##Testing the cacheMatrix function
+##>x=rbind(c(1,2),c(2,1)) ##this creates a simple matrix
+##      [,1] [,2]
+##[1,]    1    2
+##[2,]    2    1
+##>matrx=makeCacheMatrix(x)
+##>matrx$get()
+## When you run the inverse, you will receive no message about cached data because it is not commited to memory
+##>cacheSolve(matrx)
+##> cacheSolve(matrx)
+##          [,1]       [,2]
+##[1,] -0.3333333  0.6666667
+##[2,]  0.6666667 -0.3333333
+## Running the cacheSolve(matrx) the second time, checks to see if the inverse is identical and cached.
+##> cacheSolve(matrx)
+##getting cached data
+##      [,1]       [,2]
+##[1,] -0.3333333  0.6666667
+##[2,]  0.6666667 -0.3333333
